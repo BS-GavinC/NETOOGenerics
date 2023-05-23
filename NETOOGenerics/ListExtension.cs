@@ -10,7 +10,7 @@ namespace NETOOGenerics
     public static class ListExtension
     {
 
-        public static TElement NewFirst<TElement>(this IEnumerable<TElement> list, Predicate<TElement> predicate)
+        public static TElement NewFirst<TElement>(this IEnumerable<TElement> list, Predicate<TElement> predicate) where TElement : struct
         {
             foreach (TElement element in list)
             {
@@ -21,6 +21,8 @@ namespace NETOOGenerics
             }
             throw new ArgumentException();
         }
+
+        
 
         public static TValue? DicoFirst<TKey, TValue>(this Dictionary<TKey, TValue> dico, Predicate<TKey> predicate)
         {

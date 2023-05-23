@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NETOOGenerics
 {
-    internal class User<Tid>
+    public class User<Tid>
     {
         public User(Tid id)
         {
@@ -18,6 +18,17 @@ namespace NETOOGenerics
         {
             return id.Equals(Id);
         }
-
     }
+
+    public class UserClassic<T>
+    {
+        public int Id { get; set; }
+
+        public bool isMyId(int id)
+        {
+            return id == Id;
+        }
+    }
+
+
 }
